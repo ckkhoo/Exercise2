@@ -17,6 +17,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateBMI(){
+        if (editTextWeight.text.isEmpty()) {
+            editTextWeight.setError(getString(R.string.error_input));
+            return
+        }
+        if (editTextHeight.text.isEmpty()) {
+           editTextHeight.setError(getString(R.string.error_input));
+            return
+        }
+
         val weight = editTextWeight.text.toString().toInt();
         val height = editTextHeight.text.toString().toFloat();
 
